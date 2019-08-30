@@ -68,6 +68,10 @@ class App extends Component {
             this.setState({ employees: data })
           })
       }
+      this.state.firstName = '';
+      this.state.lastName = '';
+      this.state.email = '';
+
       this.setState({ isModifyClicked: false })
     // }
     // else{
