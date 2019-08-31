@@ -18,6 +18,7 @@ class App extends Component {
       isModifyClicked: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClear = this.handleClear.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.handleModification = this.handleModification.bind(this);
@@ -95,6 +96,15 @@ class App extends Component {
 
     //   e.preventDefault();
     // }
+  }
+
+  handleClear(e) {
+    console.log("clear clear clear");
+      this.state.firstName = '';
+      this.state.lastName = '';
+      this.state.email = '';
+
+      this.setState({ isModifyClicked: false })
   }
 
   componentDidMount() {
@@ -188,7 +198,11 @@ class App extends Component {
                       Register
                     </button>
                   )}
+                    &nbsp;&nbsp;&nbsp;<button className="btn btn-primary margin-left" type="button" onClick={this.handleClear}>
+                      Clear
+                    </button>
                   </div>
+
                   <div className="container">
 
                     <h2 className="mt-4">Employees</h2>
